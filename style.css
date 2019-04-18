@@ -1,9 +1,10 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-html {
+body {
     max-width: 1920px;
     height: 100vh;
     overflow: hidden;
@@ -16,81 +17,79 @@ html {
     color: #ffffff;
 }
 
+.center {
+    max-width: 1250px;
+    margin: 0 auto;
+}
 
 header {
-    height: 30vh;
+    height: 200px;
+    display: flex;
+    justify-content: center;
 }
 
-.menu {
+.nav-header {
     position: fixed;
-    top: 5%;
-    left: 2vw;
-    width: 100vw;
-    height: 20vh;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
 }
 
-.menu ul {
-    text-align: center;
+.nav-header ul {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+
 }
 
-.menu li {
-    display: inline-block;
+.nav-header li {
     margin: 0 10px;
-    font-size: 8px;
+    font-size: 12px;
     letter-spacing: 1px;
     line-height: 10px;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 400; 
 }
 
-.menu img {
-    position: absolute;
-    top: 15%;
-    left: 47%;
-    transform: translateX(-50%);
-}
-
-main {
-    margin-top: 10vh;
-}
-
-h1 {
-    font-size: 40px;
+.main-title {
+    font-size: 70px;
     line-height: 40px;
     font-family: 'Lobster', sans-serif, cursive;
     font-weight: 400;
     text-align: center;
 }
 
-button {
-    width: 170px;
-    height: 40px;
+.btn {
+    width: 250px;
+    height: 60px;
     border-radius: 24px;
     background-image: linear-gradient(47deg, rgba(240, 227, 185, 0) 0%, #d6b13e 40%, #cda527 81%);
     margin-top: 20px;
-    font-size: 8px;
+    font-size: 12px;
     letter-spacing: 1px;
     line-height: 8px;
     font-weight: 600;
     text-align: center;
     text-transform: uppercase;
-    color: #ffffff;
+   color: #ffffff;
 }
 
-.enter {
+.main-button {
     position: absolute;
-    top: 50vh;
-    left: calc(50% - 85px);
+    top: 45%;
+    left: calc(50% - 125px);
 }
 
-.enter:hover {
+.btn:hover {
     cursor: pointer;
 }
 
 .modal-wrap {
     display: none;
 }
-
 
 .modal-wrap.active {
     display: block;
@@ -100,6 +99,7 @@ button {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .5);
+    z-index: 2;
 }
 
 .modal-wrap.active .modal {
@@ -107,9 +107,9 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70vw;
-    height: 70vw;
-    background-color: white;
+    width: 70%;
+    height: 70%;
+    background-color: #fff;
 }
 
 .dim {
@@ -126,24 +126,23 @@ button {
     cursor: pointer;
 }
 
-
 .form {
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60vw;
-    height: 60vw;
+    width: 60%;
+    height: 60%;
     background-color: white;
 }
 
-h2 {
+.form-login-title {
     position: absolute;
     top: 8%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 1px;
     line-height: 8px;
     color: #292d2f;
@@ -158,14 +157,13 @@ input {
     font-size: 8px;
     letter-spacing: 1px;
     line-height: 18px;
-    width: 50vw;
+    width: 50%;
     color: #292d2f;
     font-family: "Josefin Sans";
     font-weight: 400;
     text-align: center;
     border-bottom: 1px solid #292d2f;
 }
-
 
 .login {
     position: absolute;
@@ -189,348 +187,34 @@ input {
 
 }
 
-
-.bottom {
+.page-footer {
     position: absolute;
     bottom: 0%;
-    width: 100vw;
-    height: 6vh;
+    width: 100%;
+    height: 80px;
     background-color: #000000;
     opacity: 0.7;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.bottom ul {
-    line-height: 6vh;
-    text-align: center;
-}
+.page-footer ul {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 
-.bottom li {
-    display: inline-block;
-    font-size: 8px;
-    line-height: 6px;
+}
+.page-footer li {
+    display: inline-block; 
+    font-size: 10px;
     color: #b7b7b7;
-}
-
-.one {
+    font-weight: 400;
     text-transform: uppercase;
-    font-weight: 400;
-    text-align: right;
-}
-
-.two {
-    margin: 0 10px;
     letter-spacing: 1px;
-    font-weight: 400;
-    text-align: center;
 }
 
-.two span {
-    margin: 0 5px;
-}
-
-.three {
-    font-weight: 300;
-}
-
-
-@media (orientation: landscape) and (min-width: 560px) {
-
-    .menu li {
-        margin: 0 30px;
-    }
-
-    .menu img {
-        top: -25%;
-    }
-
-    main {
-        margin-top: 1vh;
-    }
-
-    .enter {
-        top: 45vh;
-    }
-
-    .modal-wrap.active .modal {
-        width: 40vw;
-        height: 40vw;
-    }
-
-    .form {
-        width: 30vw;
-        height: 30vw;
-    }
-
-    h2 {
-        font-size: 10px;
-    }
-
-    input {
-        font-size: 6px;
-        line-height: 6px;
-        width: 20vw;
-    }
-
-    .two {
-        margin: 0 100px;
-
-    }
-}
-
-@media (orientation: landscape) and (min-width: 600px) {
-    .menu li {
-        margin: 0 40px;
-    }
-
-    .menu img {
-        left: 48%;
-        top: -25%;
-    }
-
-    .two {
-        margin: 0 150px;
-    }
-}
-
-@media (orientation: landscape) and (min-width: 800px) {
-    .menu li {
-        margin: 0 40px;
-    }
-
-    .menu img {
-        position: absolute;
-        top: -20%;
-    }
-
-    button {
-        font-size: 10px;
-    }
-
-    .modal-wrap.active .modal {
-        width: 30vw;
-        height: 30vw;
-    }
-
-    .form {
-        width: 25vw;
-        height: 25vw;
-    }
-
-
-    input {
-        font-size: 7px;
-    }
-}
-
-@media (orientation: landscape) and (min-width: 1000px) {
-
-    .menu li {
-        font-size: 14px;
-        letter-spacing: 3px;
-        line-height: 18px;
-        margin: 0 60px;
-    }
-
-    .menu img {
-        top: -25px;
-    }
-
-    h1 {
-        font-size: 72px;
-        line-height: 72px;
-    }
-
-
-    button {
-        width: 265px;
-        height: 48px;
-        font-size: 14px;
-        letter-spacing: 3px;
-        line-height: 18px;
-    }
-
-    .enter {
-        left: calc(50% - 137.5px);
-    }
-
-
-    .hide {
-        font-size: 20px;
-    }
-
-
-    h2 {
-        top: 12%;
-        font-size: 14px;
-        letter-spacing: 2px;
-        line-height: 18px;
-    }
-
-
-    input {
-        font-size: 11px;
-        line-height: 18px;
-        width: 15vw;
-    }
-
-
-    .btn-lg {
-        top: 75%;
-    }
-
-    .bottom li {
-        font-size: 11px;
-        letter-spacing: 1px;
-        line-height: 18px;
-    }
-
-    .two {
-        margin: 0 250px;
-        letter-spacing: 2px;
-    }
-
-    .two span {
-        margin: 0 20px;
-    }
-
-}
-
-@media (orientation: landscape) and (min-width: 1200px) {
-
-    .menu li {
-        margin: 0 35px;
-    }
-
-    main {
-        margin-top: 5vh;
-    }
-
-    .enter {
-        top: 50vh;
-    }
-
-    .modal-wrap.active .modal {
-        width: 25vw;
-        height: 25vw;
-    }
-
-    .form {
-        width: 20vw;
-        height: 20vw;
-    }
-
-    .two {
-        margin: 0 350px;
-    }
-}
-
-@media (orientation: landscape) and (min-width: 1400px) {
-
-    .menu li {
-        margin: 0 60px;
-    }
-
-    .modal-wrap.active .modal {
-        width: 30vw;
-        height: 30vw;
-    }
-
-    .form {
-        width: 25vw;
-        height: 25vw;
-    }
-
-    .two {
-        margin: 0 450px;
-    }
-}
-
-@media (orientation: landscape) and (min-width: 1600px) {
-
-    .menu li {
-        margin: 0 100px;
-    }
-
-    .modal-wrap.active .modal {
-        width: 50vw;
-        height: 50vw;
-    }
-
-    .form {
-        width: 40vw;
-        height: 40vw;
-    }
-
-    .two {
-        margin: 0 550px;
-    }
-}
-
-
-@media (orientation: portrait) and (min-width: 350px) {
-
-    button {
-        font-size: 12px;
-    }
-
-}
-
-@media (orientation: portrait) and (min-width: 400px) {
-
-    .menu li {
-        font-size: 12px;
-        margin: 0 15px;
-    }
-
-    h1 {
-        font-size: 50px;
-    }
-
-
-}
-
-@media (orientation: portrait) and (min-width: 600px) {
-
-    .menu li {
-        font-size: 16px;
-        margin: 0 30px;
-    }
-
-    .menu img {
-        top: -15%;
-    }
-
-    button {
-        width: 265px;
-        height: 48px;
-        font-size: 14px;
-        letter-spacing: 3px;
-        line-height: 18px;
-    }
-
-    .enter {
-        left: calc(50% - 137.5px);
-    }
-
-    h1 {
-        font-size: 70px;
-    }
-
-    h2 {
-        font-size: 24px;
-    }
-
-    input {
-        font-size: 12px;
-        line-height: 15px;
-    }
-
-    .bottom li {
-        font-size: 12px;
-    }
-
-    .two {
-        margin: 0 150px;
-    }
-
+.social-footer span {
+    margin: 0 10px;
 }

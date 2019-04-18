@@ -1,4 +1,4 @@
-document.querySelector('.enter').addEventListener("click", function () {
+document.querySelector('.main-button').addEventListener("click", function () {
   document.querySelector('.modal-wrap').classList.add('active');
   document.querySelector('.page').classList.add('dim')
 })
